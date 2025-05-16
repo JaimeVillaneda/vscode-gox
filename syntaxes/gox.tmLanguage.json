@@ -2,12 +2,34 @@
   "name": "Gox",
   "scopeName": "source.gox",
   "patterns": [
-    { "match": "\\b(func|var|const|if|else|while|return|print|break|continue|true|false)\\b", "name": "keyword.gox" },
-    { "match": "\".*?\"", "name": "string.quoted.double.gox" },
-    { "match": "'(.)'", "name": "string.quoted.single.gox" },
-    { "match": "\\b[0-9]+(\\.[0-9]+)?\\b", "name": "constant.numeric.gox" },
+    // Palabras clave y control de flujo
+    { "match": "\\b(func|var|const|if|else|while|return|print|break|continue|import)\\b", "name": "keyword.control.gox" },
+
+    // Tipos de datos
+    { "match": "\\b(int|float|char|bool|void)\\b", "name": "storage.type.gox" },
+
+    // Literales booleanos
+    { "match": "\\b(true|false)\\b", "name": "constant.language.boolean.gox" },
+
+    // Strings dobles y caracteres simples (con escapes)
+    { "match": "\"([^\"\\\\]|\\\\.)*\"", "name": "string.quoted.double.gox" },
+    { "match": "'(\\\\.|[^'\\\\])'", "name": "string.quoted.single.gox" },
+
+    // Números (enteros y flotantes)
+    { "match": "\\b\\d+\\.\\d+\\b|\\b\\d+\\b", "name": "constant.numeric.gox" },
+
+    // Comentarios de una línea y multilínea
     { "match": "//.*$", "name": "comment.line.double-slash.gox" },
-    { "match": "\\+|\\-|\\*|\\/|%|==|=|<|>|<=|>=|!=", "name": "keyword.operator.gox" }
+    { "begin": "/\\*", "end": "\\*/", "name": "comment.block.gox" },
+
+    // Operadores
+    { "match": "\\+|\\-|\\*|\\/|%|==|=|<|>|<=|>=|!=|&&|\\|\\||\\^", "name": "keyword.operator.gox" },
+
+    // Puntuación
+    { "match": "[\\(\\)\\{\\}\\[\\];,]", "name": "punctuation.gox" },
+
+    // Identificadores (variables y funciones)
+    { "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b", "name": "identifier.gox" }
   ],
   "fileTypes": ["gox"]
 }
