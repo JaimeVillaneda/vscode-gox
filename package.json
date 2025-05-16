@@ -1,0 +1,25 @@
+{
+  "name": "gox",
+  "displayName": "gox",
+  "description": "Soporte de sintaxis para el lenguaje Gox creado por Jaime Villaneda UTP",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "Gox",
+      "aliases": ["Gox", "Gox"],
+      "extensions": [".gox"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "Gox",
+      "scopeName": "source.gox",
+      "path": "./syntaxes/gox.tmLanguage.json"
+    }]
+  }
+}

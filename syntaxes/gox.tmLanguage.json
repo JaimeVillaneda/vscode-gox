@@ -1,0 +1,13 @@
+{
+  "name": "Gox",
+  "scopeName": "source.gox",
+  "patterns": [
+    { "match": "\\b(func|var|const|if|else|while|return|print|break|continue|true|false)\\b", "name": "keyword.gox" },
+    { "match": "\".*?\"", "name": "string.quoted.double.gox" },
+    { "match": "'(.)'", "name": "string.quoted.single.gox" },
+    { "match": "\\b[0-9]+(\\.[0-9]+)?\\b", "name": "constant.numeric.gox" },
+    { "match": "//.*$", "name": "comment.line.double-slash.gox" },
+    { "match": "\\+|\\-|\\*|\\/|%|==|=|<|>|<=|>=|!=", "name": "keyword.operator.gox" }
+  ],
+  "fileTypes": ["gox"]
+}
