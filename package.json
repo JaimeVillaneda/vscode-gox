@@ -1,25 +1,43 @@
 {
-  "name": "gox",
-  "displayName": "gox",
-  "description": "Soporte de sintaxis para el lenguaje Gox creado por Jaime Villaneda UTP",
+  "name": "gox-utp",
+  "displayName": "Gox UTP Language Support",
+  "description": "Resaltado de sintaxis y soporte para el lenguaje Gox creado por Jaime Villaneda (UTP).",
   "version": "0.0.1",
+  "publisher": "1000932772", 
   "engines": {
     "vscode": "^1.100.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "icon": "icon.png", 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaimeVillaneda/vscode-gox-utp"
+  },
+  "keywords": [
+    "gox",
+    "utp",
+    "syntax highlighting",
+    "language",
+    "compiler"
+  ],
+  "license": "MIT",
   "contributes": {
-    "languages": [{
-      "id": "Gox",
-      "aliases": ["Gox", "Gox"],
-      "extensions": [".gox"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "Gox",
-      "scopeName": "source.gox",
-      "path": "./syntaxes/gox.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "gox",
+        "aliases": ["Gox", "gox"],
+        "extensions": [".gox"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gox",
+        "scopeName": "source.gox",
+        "path": "./syntaxes/gox.tmLanguage.json"
+      }
+    ]
   }
 }
